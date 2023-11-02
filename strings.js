@@ -1,3 +1,5 @@
+
+
 function countUppercaseLetters(str) {
   let count = 0;
   let i = 0;
@@ -50,10 +52,27 @@ function countWordsWithSameLetters(sentence) {
   return count; // возвращаем счётчик
 }
 
-function countWordsWithA() {
+function countWordsWithA(sentence) {
+  let a=0;
+  let count=0;
+  for (let i=0; i<sentence.length; i+=1) {
+    if( sentence[i]==='a' || sentence[i]==='A') {
+      a=1;
+    };
+    if ( sentence[i]===' ' && a===1) {
+      count += 1;
+      a=0;
+    }
+  }
+  if (
+    a===1) {
+    count += 1;
+    a=0;
+  }
 
+  return count;
 }
-
+console.log(countWordsWithA('Aardvark Zebra Elephant'));
 function normalizeSpaces() {
 
 }
